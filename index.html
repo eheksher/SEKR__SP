@@ -4,65 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>סקר הביקורת הפנימית</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap">
     <style>
-        /* עיצוב כללי */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Open Sans', Arial, sans-serif;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
-            direction: rtl; /* לתמוך בכיוון ימין לשמאל */
-            color: #6a1b9a; /* צבע סגול לכותרת ולגוף הטקסט */
+            direction: rtl;
         }
-
-        /* סגנון כותרת */
-        h1 {
-            text-align: center;
-            color: #6a1b9a; /* צבע סגול לכותרת */
-            margin-top: 20px;
-            font-size: 28px;
-        }
-
-        /* עיצוב לאזור הכותרת עם הלוגו */
         .header {
-            text-align: right; /* הלוגו יהיה בצד ימין */
-            margin-bottom: 30px;
-            padding-right: 20px; /* רווח קטן לימין */
+            background-color: #00338d;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 20px;
+            position: relative;
         }
-
-        .header img {
-            max-width: 1000px; /* הקטנת גודל הלוגו */
-            height: auto;
-            margin-bottom: 50px;
+        .header h1 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 36px;
         }
-
-        /* עיצוב iframe */
-        .report-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 20px;
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 60px;
+            background-color: transparent;
         }
-
+        .container {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 20px;
+        }
         iframe {
-            width: 70%; /* הקטנת הרוחב של ה-iframe */
-            height: 850px; /* הגדלת הגובה של ה-iframe */
+            width: 100.5%;
+            height: 75vh; /* גובה דינמי המתאים למסך */
             border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #00338d;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            iframe {
+                height: 500px; /* גובה מותאם למכשירים ניידים */
+            }
         }
     </style>
 </head>
 <body>
-    <!-- אזור כותרת עם הלוגו -->
-    <div class="header">
-        <img src="https://www.grantthornton.co.il/globalassets/1.-member-firms/israel/logo/--3/gt_isr_logo_393x43-002_new.png" alt="לוגו פאן קנה">
+    <header class="header">
+        <a href="https://www.grantthornton.co.il/">
+            <img src="https://www.grantthornton.co.il/globalassets/1.-member-firms/israel/logo/--3/gt_isr_logo_393x43-002_new.png" alt="לוגו פאן קנה" class="logo">
+        </a>
         <h1>סקר הביקורת הפנימית</h1>
+    </header>
+    <div class="container">
+        <iframe 
+            title="דוח ביקורת פנימית" 
+            src="https://app.powerbi.com/reportEmbed?reportId=1482cb2d-19a0-468a-b88b-0134e9a987cb&autoAuth=true&ctid=c17309ef-714d-49a5-8a3e-f9cda14a31a3&embedConfig=autoSize=true" 
+            allowfullscreen="true">
+        </iframe>
     </div>
-
-    <!-- אזור הצגת הדוח -->
-    <div class="report-container">
-        <iframe src="https://app.powerbi.com/reportEmbed?reportId=1482cb2d-19a0-468a-b88b-0134e9a987cb&autoAuth=true&ctid=c17309ef-714d-49a5-8a3e-f9cda14a31a3" frameborder="0" allowFullScreen="true"></iframe>
-    </div>
+    <footer>
+        <p>© 2025 Grant Thornton Israel</p>
+    </footer>
 </body>
 </html>
